@@ -10,22 +10,31 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.MapView;
 import com.google.android.material.button.MaterialButton;
 
+import jiangnan.wulian_1.foya.R;
 import jiangnan.wulian_1.foya.databinding.FragmentMapBinding;
 
 public class MapFragment extends Fragment {
 
     private FragmentMapBinding binding;
-
+    private MapView mapView;
+    private AMap aMap;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        MapViewModel mapViewModel =
-                new ViewModelProvider(this).get(MapViewModel.class);
+
+
 
         binding = FragmentMapBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+        View view = inflater.inflate(R.layout.fragment_map, container, false);
+        mapView = (MapView) view.findViewById(R.id.map);
+        mapView.onCreate(savedInstanceState);
+        if (aMap == null) {
+            aMap = mapView.getMap();
+        }
         // 设置按钮点击事件
         setupButtonListeners();
 
@@ -56,4 +65,4 @@ public class MapFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-} 
+}

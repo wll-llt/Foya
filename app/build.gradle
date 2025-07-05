@@ -47,10 +47,12 @@ dependencies {
     implementation libs.lifecycle.viewmodel.ktx
     implementation libs.navigation.fragment
     implementation libs.navigation.ui
+    implementation files('libs\\AMap3DMap_10.1.300_AMapSearch_9.7.4_AMapLocation_6.4.9_20250509.jar')
+    implementation libs.play.services.maps
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
-    
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     // 暂时注释掉高德地图依赖，先确保应用能正常运行
     // implementation 'com.amap.api:3dmap:10.0.600'
     

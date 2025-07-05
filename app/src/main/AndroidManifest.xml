@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -22,11 +23,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Foya"
         tools:targetApi="31">
-        
+        <!--定位service-->
+        <service android:name="com.amap.api.location.APSService"/>
+
         <!-- 高德地图API Key -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="c6d5e64f265eabc76189576c560e8724" />
+            android:value="ea3818b1d9fa4920561b039d22a1982e" />
+
             
         <activity
             android:name=".LoginActivity"

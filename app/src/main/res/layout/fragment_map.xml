@@ -58,41 +58,12 @@
             android:layout_height="match_parent">
 
             <!-- 地图背景 -->
-            <ImageView
+
+            <com.amap.api.maps.MapView
+                android:id="@+id/map"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/primary_light_blue"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_menu_camera" />
+                android:layout_height="match_parent"/>
 
-            <!-- 地图覆盖信息 -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@color/transparent_black"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="地图功能开发中..."
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="即将集成高德地图"
-                    android:textAlignment="center"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
 
         </FrameLayout>
     </com.google.android.material.card.MaterialCardView>
