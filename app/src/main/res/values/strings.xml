@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Foya无人机助手</string>
+    <string name="navigation_drawer_open">打开导航抽屉</string>
+    <string name="navigation_drawer_close">关闭导航抽屉</string>
+    <string name="nav_header_title">Foya无人机助手</string>
+    <string name="nav_header_subtitle">景区智能旅游助手</string>
+    <string name="nav_header_desc">导航头部</string>
+    <string name="action_settings">设置</string>
+
+    <string name="menu_home">首页</string>
+    <string name="menu_gallery">航拍图库</string>
+    <string name="menu_slideshow">飞行控制</string>
+    <string name="menu_map">景区地图</string>
+    <string name="menu_weather">天气信息</string>
+    <string name="menu_guide">旅游指南</string>
+</resources>

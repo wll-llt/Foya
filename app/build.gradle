@@ -1,0 +1,59 @@
+plugins {
+    alias(libs.plugins.android.application)
+}
+
+android {
+    namespace 'jiangnan.wulian_1.foya'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "jiangnan.wulian_1.foya"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'com.amap.api:3dmap:10.0.600'
+        force 'com.amap.api:search:9.7.1'
+    }
+}
+
+dependencies {
+
+    implementation libs.appcompat
+    implementation libs.material
+    implementation libs.constraintlayout
+    implementation libs.lifecycle.livedata.ktx
+    implementation libs.lifecycle.viewmodel.ktx
+    implementation libs.navigation.fragment
+    implementation libs.navigation.ui
+    testImplementation libs.junit
+    androidTestImplementation libs.ext.junit
+    androidTestImplementation libs.espresso.core
+    
+    // 暂时注释掉高德地图依赖，先确保应用能正常运行
+    // implementation 'com.amap.api:3dmap:10.0.600'
+    
+    // 图片加载库
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+}
