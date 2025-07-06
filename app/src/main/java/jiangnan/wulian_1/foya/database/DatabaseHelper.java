@@ -110,11 +110,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         User user = null;
         if (cursor.moveToFirst()) {
             user = new User();
-            user.setId(cursor.getInt(cursor.getColumnIndex(COLUMN_ID)));
-            user.setUsername(cursor.getString(cursor.getColumnIndex(COLUMN_USERNAME)));
-            user.setEmail(cursor.getString(cursor.getColumnIndex(COLUMN_EMAIL)));
-            user.setPhone(cursor.getString(cursor.getColumnIndex(COLUMN_PHONE)));
-            user.setCreateTime(cursor.getString(cursor.getColumnIndex(COLUMN_CREATE_TIME)));
+            int idIndex = cursor.getColumnIndex(COLUMN_ID);
+            int usernameIndex = cursor.getColumnIndex(COLUMN_USERNAME);
+            int emailIndex = cursor.getColumnIndex(COLUMN_EMAIL);
+            int phoneIndex = cursor.getColumnIndex(COLUMN_PHONE);
+            int createTimeIndex = cursor.getColumnIndex(COLUMN_CREATE_TIME);
+            
+            if (idIndex >= 0) user.setId(cursor.getInt(idIndex));
+            if (usernameIndex >= 0) user.setUsername(cursor.getString(usernameIndex));
+            if (emailIndex >= 0) user.setEmail(cursor.getString(emailIndex));
+            if (phoneIndex >= 0) user.setPhone(cursor.getString(phoneIndex));
+            if (createTimeIndex >= 0) user.setCreateTime(cursor.getString(createTimeIndex));
         }
         cursor.close();
         
